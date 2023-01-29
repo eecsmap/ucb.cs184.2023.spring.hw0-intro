@@ -18,7 +18,7 @@ unsigned int texture;
  * Write your own matrix vector multiplication function. Do not use the built-in CGL function!
  */
 Vector3D mult(Matrix3x3 mat, Vector3D input) {
-    /* TODO */
+    input = input.x * mat[0] + input.y * mat[1] + input.z * mat[2];
     return input;
 }
 
@@ -80,7 +80,7 @@ class QuadDrawer : public Renderer {
     glBindTexture(GL_TEXTURE_2D, texture); // Comment this out to disable textures
     glBegin(GL_QUADS);
 
-    glColor3f( 1.0, 1.0, 0.0); // Can play with RGB values here :)
+    glColor3f( 1.0, 1.0, 1.0); // Can play with RGB values here :)
 
     Vector3D a_trans = mult(mat, a);
     Vector3D b_trans = mult(mat, b);
